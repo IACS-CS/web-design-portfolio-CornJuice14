@@ -7,9 +7,9 @@
   /* Full screen hero section */
   width: 100%;
   min-height: 100dvh;
-  background: #0033a0;
+  background: rgb(26, 168, 168);
   color: white;
-  font-family: Futura;
+  font-family: Poppins;
   font-weight: bold;
   font-size: 30px;
   text-align: center;
@@ -17,7 +17,7 @@
 .hero a {
   color: white;
   text-decoration: underline;
-  text-decoration-color: #c6093b;
+  text-decoration-color: rgb(255, 132, 84);
 }
 
 /* A little "activation" to demonstrate JS is working in the template */
@@ -29,7 +29,7 @@
 }
 .hero.active a {
   color: white;
-  text-decoration-color: #0033a0;
+  text-decoration-color: teal;
 }
 
 @media (max-width: 800px) {
