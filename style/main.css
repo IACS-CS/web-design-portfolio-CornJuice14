@@ -1,26 +1,29 @@
 /* There's some sample CSS here which you can use or nuke as you like */
-
-html {
-  /* Make #id links scroll smoothly */
+@import url('https://fonts.googleapis.com/css2?family=Kalnia+Glaze:wght@100..700&display=swap');
+html {  /* Make #id links scroll smoothly */
   scroll-behavior: smooth;
 }
 
 body {
   /* Change to something you like, but please do customize the font! */
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: "Kalnia Glaze", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
   line-height: 1.4;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
   /* reset default margins */
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   /* Customize colors! */
-  background: #f0f0f0;
+  background: #000000;
   color: #333;
 }
 h2 {
-  color: #0033a0;
+  color: rgb(255, 132, 84);
   text-decoration: underline;
-  text-decoration-color: #c6093b;
+  text-decoration-color: rgb(26, 168, 168);
   margin-bottom: 8px;
 }
 p {
@@ -35,3 +38,7 @@ main {
   font-size: 18px; /* choose a font size */
   margin: 0 auto; /* center the content */
 }
+ a {
+  color: rgb(160, 8, 134);
+  font-family: "Poppins";
+ }
