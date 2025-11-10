@@ -1,14 +1,15 @@
 /* There's some sample CSS here which you can use or nuke as you like */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kalnia+Glaze:wght@100..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
-html {  /* Make #id links scroll smoothly */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kalnia+Glaze:wght@100..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap");
+html {
+  /* Make #id links scroll smoothly */
   scroll-behavior: smooth;
 }
 
 body {
   /* Change to something you like, but please do customize the font! */
-   font-family: "Bungee Spice", sans-serif;
+  font-family: "Bungee Spice", sans-serif;
   font-weight: 400;
   font-style: normal;
   line-height: 1.4;
@@ -27,18 +28,72 @@ h2 {
 }
 p {
   margin-top: 0;
-  font-family: "Poppins"
+  font-family: "Poppins";
 }
 
 main {
+  /* This code was generated with help from GitHub Copilot
+     in response to the prompt "I want the main to have a grid layout" - 11/10/2025 */
   /* Make sure our content can scroll the hero away */
   min-height: 100dvh;
-  max-width: 35em; /* choose a width for text */
+  margin: 0 auto; /* center the content */
+  padding: 1.25rem;
+  display: grid;
+  grid-template-columns: 1fr; /* single column on small screens */
+  gap: 1.5rem;
+  align-items: start;
+  max-width: 1200px; /* container max width for large screens */
   line-height: 1.8; /* choose a line spacing */
   font-size: 18px; /* choose a font size */
-  margin: 0 auto; /* center the content */
 }
- a {
+
+@media (min-width: 720px) {
+  main {
+    /* switch to two columns on wider viewports */
+    grid-template-columns: 2fr 3fr;
+  }
+
+  /* This code was generated with help from GitHub Copilot
+     in response to the prompt "move the .bc to the right side, while keeping the other sections on the sides they are currently on" - 11/10/2025 */
+  /* Explicitly place sections into left (col 1) or right (col 2) columns and set rows
+     so that .bc appears on the right column while preserving the other sections' sides. */
+  main .info {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  main .cyoa {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  main .bc {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  main .zg {
+    grid-column: 2;
+    grid-row: 3;
+  }
+  main .source {
+    grid-column: 1;
+    grid-row: 3;
+  }
+}
+a {
   color: rgb(160, 8, 134);
   font-family: "Poppins";
- }
+}
+
+main section {
+  border-style: groove;
+  border-width: 5px;
+  border-color: rgb(26, 168, 168);
+}
+
+.info,
+.cyoa,
+.bc,
+.zg,
+.source {
+  display: flex;
+  flex-direction: column;
+}
