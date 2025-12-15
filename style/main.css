@@ -90,9 +90,14 @@ main section {
 .cyoa,
 .bc,
 .zg,
+.ip,
 .source {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
 }
 
 /* Keep the About Me and Sources sections out of the two-column layout
