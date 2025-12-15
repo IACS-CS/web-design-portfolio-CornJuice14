@@ -39,7 +39,7 @@ main {
   margin: 0 auto; /* center the content */
   padding: 1.25rem;
   display: grid;
-  grid-template-columns: 1fr; /* single column on small screens */
+  grid-template-columns: 1fr 1fr; /* single column on small screens */
   gap: 1.5rem;
   align-items: start;
   max-width: 1200px; /* container max width for large screens */
@@ -48,37 +48,30 @@ main {
 }
 
 @media (min-width: 720px) {
-  main {
+  section.grid {
     /* switch to two columns on wider viewports */
-    grid-template-columns: 2fr 3fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   /* This code was generated with help from GitHub Copilot
      in response to the prompt "move the .bc to the right side, while keeping the other sections on the sides they are currently on" - 11/10/2025 */
   /* Explicitly place sections into left (col 1) or right (col 2) columns and set rows
      so that .bc appears on the right column while preserving the other sections' sides. */
-  main .info {
-    grid-column: 1;
-    grid-row: 1;
-  }
+
   main .cyoa {
-    grid-column: 2;
-    grid-row: 1;
+    grid-column: 1;
+    grid-row: 2;
   }
   main .bc {
     grid-column: 2;
     grid-row: 2;
   }
   main .zg {
-    grid-column: 2;
+    grid-column: 1;
     grid-row: 3;
   }
-  main .ip{
+  main .ip {
     grid-column: 2;
-    grid-row: 4;
-  }
-  main .source {
-    grid-column: 1;
     grid-row: 3;
   }
 }
@@ -100,4 +93,12 @@ main section {
 .source {
   display: flex;
   flex-direction: column;
+}
+
+/* Keep the About Me and Sources sections out of the two-column layout
+   by making them span the full width of the grid container. This keeps
+   them visually separate from the two-column project/grid areas. */
+main > #about-me,
+main > #attribution {
+  grid-column: 1 / -1;
 }
