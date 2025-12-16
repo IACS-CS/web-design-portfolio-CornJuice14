@@ -22,4 +22,26 @@ document.addEventListener("DOMContentLoaded", () => {
     clearTimeout(timeout);
     timeout = setTimeout(equalizeGridSections, 150);
   });
+  /* Flip behavior for the business-card section only
+     This code was generated with help from GitHub Copilot
+     in response to the prompt "Make the .bc section flip like a double-sided card" - 12/16/2025 */
+  const flipCard = document.querySelector(".bc .flip-card");
+  if (flipCard) {
+    const inner = flipCard.querySelector(".flip-card-inner");
+    const toggleFlip = (e) => {
+      // toggle class on the outer container for CSS to rotate
+      flipCard.classList.toggle("is-flipped");
+      inner.classList.toggle("is-flipped");
+      // re-calc equal heights when card flips (content size may change)
+      equalizeGridSections();
+    };
+
+    flipCard.addEventListener("click", toggleFlip);
+    flipCard.addEventListener("keydown", (ev) => {
+      if (ev.key === "Enter" || ev.key === " ") {
+        ev.preventDefault();
+        toggleFlip();
+      }
+    });
+  }
 });
