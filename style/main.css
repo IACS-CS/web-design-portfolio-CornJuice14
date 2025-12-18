@@ -151,3 +151,58 @@ main > #attribution {
   position: relative;
   overflow: visible;
 }
+
+/* Hover/focus effects for the Zen Garden box (.zg) only
+   This code was generated with help from GitHub Copilot
+   in response to the prompt "Add hover effects to my zen garden box" - 12/18/2025 */
+.zg {
+  transition: transform 0.28s ease, box-shadow 0.28s ease,
+    background-color 0.28s ease;
+  transform-origin: left;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.zg:hover,
+.zg:focus-within {
+  transform: translateY(-8px) scale(1.5);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.18);
+  background: linear-gradient(270deg, #ff8a8a, #a38aff, #8affc1);
+  background-size: 600% 600%;
+  animation: gradientShift 10s ease infinite;
+}
+.zg h2 {
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.zg:hover h2,
+.zg:focus-within h2 {
+  color: rgb(26, 168, 168);
+  transform: translateY(-2px);
+}
+.zg a {
+  transition: color 0.18s ease, text-decoration-color 0.18s ease;
+}
+.zg:hover a,
+.zg:focus-within a {
+  color: rgb(160, 8, 134);
+  text-decoration-color: rgb(160, 8, 134);
+}
+
+/* Project link visibility for the Interactive section */
+.ip .project-link {
+  display: none;
+  margin-top: 0.75rem;
+}
+.ip .project-link.show {
+  display: block;
+}

@@ -44,4 +44,25 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  /* Interactive section: show project link when a radio is selected */
+  const ipSection = document.querySelector(".ip");
+  if (ipSection) {
+    const radios = Array.from(
+      ipSection.querySelectorAll('input[name="ip-choice"]')
+    );
+    const linkBox = ipSection.querySelector(".project-link");
+    const updateLink = () => {
+      // show link only when the 'yes' radio is selected
+      const yesSelected = radios.some((r) => r.checked && r.value === "yes");
+      if (linkBox) {
+        if (yesSelected) linkBox.classList.add("show");
+        else linkBox.classList.remove("show");
+        equalizeGridSections();
+      }
+    };
+    radios.forEach((r) => r.addEventListener("change", updateLink));
+    // If a radio was pre-selected, ensure link is visible on load
+    updateLink();
+  }
 });
